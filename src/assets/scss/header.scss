@@ -1,0 +1,120 @@
+$blue__color: #232F3E;
+$orange__color: #FCBB6A;
+$light-blue__color: #37475A;
+$font-stack:    Helvetica, sans-serif;
+
+
+
+.nav{
+    font-family: $font-stack;
+    background-color: $blue__color;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .lineOne {
+        height: 50px;
+        .menu{
+            margin-top: -5px !important;
+            .menuButton{
+                color: #ffffff;
+                // margin-top: -8px !important;
+                
+                
+            }
+        }
+        .logo{
+            // height: 50px;
+           
+            display: flex;
+            align-items: center;
+            .logoIcon {
+                width: 86px;
+                height: 28px;
+                background-image: url("https://images-na.ssl-images-amazon.com/images/G/01/gno/sprites/new-nav-sprite-global-1x_blueheaven-fluid._CB406837170_.png");
+                background-position-x: -8px;
+                background-position-y: -49px;
+                
+            }
+        
+            
+        }
+        
+        
+        
+        .log {
+            padding: 0px;
+            font-size: 14px;
+        
+        }
+        .basket{
+            padding: 0px;
+            
+        }
+    }
+
+
+    
+    
+    
+    
+
+    
+    
+    .search {
+        height: 40px;
+        border-radius: 10px 10px 10px 10px;
+        background-color: #ffffff;
+        .searchInput{
+        //    width: 368px;
+            outline: none;
+            border: none;
+            border-radius: 10px 10px 10px 10px;
+            justify-content: center;
+            
+        }
+        
+        .searchIcon{
+            right: 0px;
+            position: absolute;
+            width: 40px;
+            border-radius: 10px 10px 10px 10px;
+            background-color: $orange__color;
+        
+        }
+       
+        
+        
+    }
+    
+    .feature {
+        // display: flex;
+        overflow: auto;
+        white-space: nowrap;
+        .featureButton {
+            display: inline-block;
+            color: #ffffff;
+            text-align: center;        
+            padding: 15px 15px 10px 15px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        
+        }
+    
+    }
+
+    .unknow{
+        text-align: center;
+        width: 100%;
+        height: 5vh;
+        line-height: 5vh;
+        background-color: $light-blue__color;
+        font-size: 14px;
+
+    }
+    
+   
+}
+
