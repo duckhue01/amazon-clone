@@ -1,38 +1,38 @@
 import React from 'react'
 
 import { AiOutlineSearch } from 'react-icons/ai'
-import { RiShoppingCartLine } from "react-icons/ri";
-import { AiOutlineMenu } from 'react-icons/ai'
+
 
 const Header = () => {
     return (    
         <div className="nav container-xxl">
                 <div className="lineOne row col-12 justify-content-between p-0 m-0 ">
                     <div
-                            className="col-5  row   p-0 m-0 pl-3"
+                            className="col-6 row p-0 m-0 pl-3"
                     >
-                        <div className="menu col-3  align-self-center p-0 ">
-                                <AiOutlineMenu
-                                    className="menuButton "
-                                    size={25}
+                        <div className="menu align-self-center p-1 ">
+                                <div
+                                    className="menuButton"
+                                    
                                     
                                 />                    
                         </div>
-                        <div className="logo col-9    align-self-center p-1">
+                        <div className="logo align-self-center p-1 ml-1 ">
                                 <div
                                     className="logoIcon ">                       
                                 </div>
                         </div>
                     </div>
                     <div
-                        className="col-4 row   p-0 m-0 pr-3 justify-content-end"
+                        className="col-5 row p-0 m-0 pr-3 justify-content-end "
                     >
-                        <div className="log col-7  align-self-center  ">
+                        <div className="log   align-self-center p-1 mr-1 ">
                             <div>Sign in</div>
                         </div>
-                        <div className="basket col-3 align-self-center ">
-                            <RiShoppingCartLine
-                                size={25}
+                        <div className="basket align-self-center p-1 ">
+                            <div
+                                
+                                className="basketButton"
                             />
 
                         </div>
@@ -45,14 +45,14 @@ const Header = () => {
                             type="text" 
                             name="" 
                             id=""
-                            className=" searchInput  h-100 px-3 col-11"
+                            className=" searchInput h-100 px-3 col-11"
                             placeholder="Search Amazon"
                             
                         />           
                     
                         <AiOutlineSearch
                                 className="searchIcon p-1 h-100  "
-                                size={30}
+                                size={25}
                                 color="black"
                         />
                     </div>
@@ -104,9 +104,9 @@ const Header = () => {
                     </div>
 
                 </div> 
-                <div className="unknow ">
+                {/* <div className="unknown ">
                     deliver to vietnam
-                </div>
+                </div> */}
 
         </div>
  
