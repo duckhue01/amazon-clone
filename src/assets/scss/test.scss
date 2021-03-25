@@ -1,10 +1,12 @@
-.e1 {
-    order: 1;
-}
-.e2 {
-    order: 3;
-}
-
-.e3 {
-    order: 2;
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(12 , 1fr);
+    .item {
+        grid-column-start: 1;
+        grid-column-end: span 12;
+        .item1{
+            grid-column-start: 1;
+            grid-column-end: span 31213;
+        }
+    }
 }

@@ -3,10 +3,20 @@ import "../assets/scss/test.scss"
 
 const Test = () => {
     return (
-        <div class="row container-xxl justify-content-center">
-            <div class="col-4 border e1">
-            1 of 2
+        <div class=" container1 border">
+            <div class="item border">
+            
+                <div class="item1 border">
+                121
+                </div>
+                <div class="item1 border">
+                121
+                </div>
             </div>
+            <div class="item1 border">
+                121
+            </div>
+            
            
 
 

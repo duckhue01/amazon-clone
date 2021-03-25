@@ -1,94 +1,117 @@
 @import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
+@mixin grid-column($startCol, $spanCol, $startRow, $spanRow ) {
+    grid-column-start: $startCol;
+    grid-column-end: span $spanCol;
+    grid-row-start: $startRow;
+    grid-row-end: span $spanRow;
+}
 
-
+::-webkit-scrollbar {
+   display: none;
+}
+ 
 .nav{
-    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Open Sans', sans-serif;
     background-color: $blue__color;
     color: #ffffff;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(4, auto);
     align-items: center;
     justify-content: space-between;
 
-    .lineOne {
-        height: 50px;
-        .menu{
-            margin-top: -5px !important;
-            .menuButton{
-                width: 20px;
-                height: 18px;
-                background-image: url("../icons/new-nav-sprite-global-1x_blueheaven-fluid._CB406836994_.png");
-                background-position-x: -20px;
-                background-position-y: -378px;
-                
-                                                    
-            }
-            .menuButton:hover {
-                cursor: pointer;
-            }
-        }
-        .logo{
-            // height: 50px;
-           
-            display: flex;
-            align-items: center;
-            .logoIcon {
-                width: 86px;
-                height: 28px;
-                background-image: url("../icons/new-nav-sprite-global-1x_blueheaven-fluid._CB406836994_.png");
-                background-position-x: -8px;
-                background-position-y: -49px;
-                
-            }
-            .logoIcon:hover {
-                cursor: pointer;
-            }
-        
+    
+       
+    .menu{
+        @include grid-column(1 ,1 , 1, 1);
+        margin-left: 10px;
+        margin-top: -5px !important;
+        .menuButton{
+            width: 20px;
+            height: 18px;
+            background-image: url("../icons/icon.png");
+            background-position-x: -20px;
+            background-position-y: -378px;
             
+                                                
         }
-        
-        
-        
-        .log {
-            padding: 0px;
-            font-size: 14px;
-        
-        }
-        .log:hover {
+        .menuButton:hover {
             cursor: pointer;
         }
-        .basket{
-            .basketButton {
-                width: 41px;
-                height: 29px;
-                background-image: url("../icons/new-nav-sprite-global-1x_blueheaven-fluid._CB406836994_.png");
-                background-position-x: -8px;
-                background-position-y: -240px;
+    }
+    .logo{
+        @include grid-column(2 ,1 , 1, 1);
+        
+        display: flex;
+        align-items: center;
+        .logoIcon {
+            width: 86px;
+            height: 28px;
+            background-image: url("../icons/icon.png");
+            background-position-x: -8px;
+            background-position-y: -49px;
+            
+        }
+        .logoIcon:hover {
+            cursor: pointer;
+        }
+    
+        
+    }
+    
+    
+    
+    .log {
+        @include grid-column(10 ,2 , 1, 1);
+        padding: 0px;
+        font-size: 14px;
+    
+    }
+    .log:hover {
+        cursor: pointer;
+    }
+    .basket{
+        @include grid-column(12 ,1 , 1, 1);
+        margin-right: 10px;
+        .basketButton {
+            width: 41px;
+            height: 29px;
+            background-image: url("../icons/icon.png");
+            background-position-x: -8px;
+            background-position-y: -240px;
 
-            }
-            
         }
-        .basket:hover  {
-            cursor: pointer;
-        }
-    }    
+        
+    }
+    .basket:hover  {
+        cursor: pointer;
+    }
+        
     .search {
+        @include grid-column(1 ,12 , 2, 1);
         height: 40px;
-        border-radius: 10px 10px 10px 10px;
-        background-color: #ffffff;
+        margin: 0 1rem 0 1rem;
+
         .searchInput{
-        //    width: 368px;
             outline: none;
             border: none;
             border-radius: 10px 10px 10px 10px;
             justify-content: center;
+            height: 40px;
+            width: 100%;
+            font-size: 14px;
+            color: $dark-blue__color;
             
         }
         
         .searchIcon{
-            right: 0px;
+            right: 1rem;
             position: absolute;
             width: 40px;
+            height: 40px;
             border-radius: 10px 10px 10px 10px;
             background-color: $orange__color;
             
@@ -104,18 +127,18 @@
     }
     
     .feature {
-        // display: flex;
+        @include grid-column(1 ,12 , 3, 1);
         overflow: auto;
         white-space: nowrap;
         .featureButton {
             display: inline-block;
             color: #ffffff;
             text-align: center;        
-            padding: 10px 15px 5px 15px;
+            padding: 10px 15px 10px 15px;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            // border: 1px solid white;
+            font-size: 14px;
+            font-weight: 600;
+            
         
         }
         .featureButton:hover {
@@ -124,92 +147,100 @@
     
     }
 
-    .unknown{
+    .deliver{
+        @include grid-column(1 ,12 , 4, 1);
+        padding: 10px;
         text-align: center;
         width: 100%;
-        height: 5vh;
-        line-height: 5vh;
         background-color: $light-blue__color;
         font-size: 14px;
-
     }
-    
-   
+
 }
+
+@media (max-width:$layout-breakpoint-md - 1){
+    .md{
+        display: none;
+    }
+}
+
 
 
 
 
 @media (min-width:$layout-breakpoint-md) {
     .nav{
-        background-color: $dark-blue__color;  
-        .lineOne {
+        grid-template-columns: repeat(2, auto) 1fr repeat(4, auto);
+        grid-template-rows: 60px;   
+        background-color: $dark-blue__color;   
+        column-gap: 1rem;
+
+        .menu{
+            display: none;
+
+        }
+        .logo{
+            @include grid-column(1 ,1 , 1, 1);
             
-            .menu{
-                display: none;
-            }
-            .logo{             
-                display: flex;
-                align-items: center;
-                .logoIcon {
-                    width: 86px;
-                    height: 28px;
-                    background-image: url("../icons/new-nav-sprite-global-1x_blueheaven-fluid._CB406836994_.png");
-                    background-position-x: -8px;
-                    background-position-y: -49px;
-                    
-                }
-                .logoIcon:hover {
-                    cursor: pointer;
-                }
-            
+          
+            .logoIcon {
+
                 
             }
             
+        
             
-            
-            .log {
-                padding: 0px;
-                font-size: 14px;
-            
+        }
+        .md__deliver{
+            @include grid-column(2 ,1 , 1, 1);
+            position: relative;
+            width: 75px;
+            height: 31px;
+            .md__deliverIcon{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 20px;
+                height: 23px;
+                background-image: url("../icons/icon.png");
+                background-position-x: -77px;
+                background-position-y: -340px;
+         
             }
-            .log:hover {
-                cursor: pointer;
+            .md__deliverText1{
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 14px;
+                line-height: 14px;
+
             }
-            .basket{
-                .basketButton {
-                    width: 41px;
-                    height: 29px;
-                    background-image: url("../icons/new-nav-sprite-global-1x_blueheaven-fluid._CB406836994_.png");
-                    background-position-x: -8px;
-                    background-position-y: -240px;
-    
-                }
-                
+            .md__deliverText2{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                height: 17px;
+                line-height: 17px;
+
             }
-            .basket:hover  {
-                cursor: pointer;
-            }
-        }    
+
+
+
+
+
+        }
         .search {
-            height: 40px;
-            border-radius: 10px 10px 10px 10px;
-            background-color: #ffffff;
+            @include grid-column(3 ,1 , 1, 1);
+           
+    
             .searchInput{
-            //    width: 368px;
-                outline: none;
-                border: none;
-                border-radius: 10px 10px 10px 10px;
-                justify-content: center;
+               
                 
             }
             
             .searchIcon{
-                right: 0px;
-                position: absolute;
-                width: 40px;
-                border-radius: 10px 10px 10px 10px;
-                background-color: $orange__color;
+                right: 348px;
+               
                 
                 
             
@@ -217,45 +248,165 @@
             .searchIcon:hover {
                 cursor: pointer;
             }
-           
-            
+  
             
         }
-        
-        .feature {
-            // display: flex;
-            overflow: auto;
-            white-space: nowrap;
-            .featureButton {
-                display: inline-block;
-                color: #ffffff;
-                text-align: center;        
-                padding: 10px 15px 5px 15px;
-                text-decoration: none;
-                font-size: 13px;
-                font-weight: 500;
-                // border: 1px solid white;
-            
+        .md__lang{
+            @include grid-column(4 ,1 , 1, 1);
+            position: relative;
+            width: 49px;
+            height: 23px;
+            .md__langFlag{
+                width: 31px;
+                height: 23px;
+                background-image: url("../icons/flag.png");
+                background-position-x: -2px;
+                background-position-y: -462px;
+
             }
-            .featureButton:hover {
-                cursor: pointer;
+            .md__langButton{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 16px;
+                height: 12px;
+                background-image: url("../icons/flag.png");
+                background-position-x: -163px;
+                background-position-y: -172px;
             }
-        
+            
         }
-    
-        .unknown{
-            text-align: center;
-            width: 100%;
-            height: 5vh;
-            line-height: 5vh;
-            background-color: $light-blue__color;
-            font-size: 14px;
-    
+        .md__log{
+            @include grid-column(5 ,1 , 1, 1);
+            position: relative;
+            width: 110px;
+            height: 31px;
+            .md__logButton{
+                position: absolute;
+                right: 0;
+                bottom: 1px;
+                width: 16px;
+                height: 12px;
+                background-image: url("../icons/flag.png");
+                background-position-x: -163px;
+                background-position-y: -172px;
+                
+
+            }
+            .md__logText1{
+                height: 14px;
+                line-height: 14px;
+                
+            }
+            .md__logText2{
+                display: flex;
+                height: 17px;
+                line-height: 17px;
+            }
+
+          
+
+            
+
+
+
+
+
+
+
         }
-        
-       
+        .md__return{
+            @include grid-column(6 ,1 , 1, 1);
+            .md__returnText1{
+                    height: 14px;
+                    line-height: 14px;              
+
+            }
+            .md__returnText2{
+                    height: 17px;
+                    line-height: 17px;
+            }
+            
+
+              // .md__deliver{
+            //     @include grid-column(2 ,1 , 1, 1);
+            //     position: relative;
+            //     width: 75px;
+            //     height: 31px;
+            //     .md__deliverIcon{
+            //         position: absolute;
+            //         left: 0;
+            //         bottom: 0;
+            //         width: 20px;
+            //         height: 23px;
+            //         background-image: url("../icons/icon.png");
+            //         background-position-x: -77px;
+            //         background-position-y: -340px;
+             
+            //     }
+            //     .md__deliverText1{
+            //         position: absolute;
+            //         top: 0;
+            //         right: 0;
+            //         height: 14px;
+            //         line-height: 14px;
+    
+            //     }
+            //     .md__deliverText2{
+            //         position: absolute;
+            //         bottom: 0;
+            //         right: 0;
+            //         height: 17px;
+            //         line-height: 17px;
+    
+            //     }
+    
+    
+    
+    
+    
+            // }
+
+
+
+
+        }
+        .basket{
+            @include grid-column(7 ,1 , 1, 1);
+         
+            .basketButton {
+               
+    
+            }
+            
+        }
+
     }
+    .sm{
+        display: none;
+    }
+    .md__lineone{
+        font-size: 12px;
+        color: $grey__color;
+        font-weight: 500;
+    }
+    .md__linetwo{
+        font-size: 13px;
+        color: #ffffff;
+        font-weight: 700;
+
+    }
+    
+
+    
 
 
     
 }
+
+
+@media (max-width:$layout-breakpoint-md){
+
+}
+
+
